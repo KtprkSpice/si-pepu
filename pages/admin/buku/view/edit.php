@@ -27,7 +27,9 @@ $buku = $qbuku->fetch(PDO::FETCH_ASSOC);
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Tambah Buku</h2>
-        <form action="<?= BASE_URL ?>/pages/admin/buku/crud/simpan.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/buku/crud/update.php" method="post">
+            <!-- ID -->
+            <input type="hidden" name="id" value="<?= $buku['id'] ?>">
             <!-- Kategori buku -->
             <div class="flex flex-col gap-2 max-w-lg p-5">
                 <label for="id_kategori">Kategori buku</label>
@@ -42,6 +44,19 @@ $buku = $qbuku->fetch(PDO::FETCH_ASSOC);
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
+            <!-- Kode Buku -->
+            <div class="flex flex-col gap-2 max-w-lg p-5">
+                <label for="code_buku">Kode Buku</label>
+                <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
+                    <input
+                        readonly
+                        type="text"
+                        name="code_buku"
+                        id="code_buku"
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['code_buku'] ?>">
+                </div>
             </div>
             <!-- Nama Buku -->
             <div class="flex flex-col gap-2 max-w-lg p-5">
@@ -103,8 +118,20 @@ $buku = $qbuku->fetch(PDO::FETCH_ASSOC);
                         value="<?= $buku['tgl_rilis_buku'] ?>">
                 </div>
             </div>
+            <!-- Taggal Masuk Buku -->
+            <div class="flex flex-col gap-2 max-w-lg p-5">
+                <label for="tgl_masuk">Tanggal Masuk Buku</label>
+                <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
+                    <input
+                        type="date"
+                        name="tgl_masuk"
+                        id="tgl_masuk"
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['tgl_masuk'] ?>">
+                </div>
+            </div>
             <div class="my-10">
-                <button type="submit" class="bg-blue-500 px-5 py-2 cursor-pointer shadow-lg text-white hover:bg-blue-900 hover:shadow-xl rounded-lg">Tambah</button>
+                <button type="submit" class="bg-blue-500 px-5 py-2 cursor-pointer shadow-lg text-white hover:bg-blue-900 hover:shadow-xl rounded-lg">Update</button>
             </div>
         </form>
     </div>
