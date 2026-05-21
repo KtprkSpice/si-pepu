@@ -58,14 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $qInsertBook = $conn->prepare('
         UPDATE buku 
         SET 
-        code_buku = :code_buku,
-        nama_buku = :nama_buku,
-        id_kategori = :id_kategori,
-        nama_penerbit = :nama_penerbit,
-        isbn = :isbn,
-        nama_penulis = :nama_penulis,
-        tgl_rilis_buku = :tgl_rilis_buku,
-        tgl_masuk = :tgl_masuk
+            code_buku = :code_buku,
+            nama_buku = :nama_buku,
+            id_kategori = :id_kategori,
+            nama_penerbit = :nama_penerbit,
+            isbn = :isbn,
+            nama_penulis = :nama_penulis,
+            tgl_rilis_buku = :tgl_rilis_buku,
+            tgl_masuk = :tgl_masuk
         WHERE id = :id
     ');
 

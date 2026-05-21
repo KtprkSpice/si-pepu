@@ -3,6 +3,7 @@ require_once __DIR__ . "/../../layout/admin.php";
 
 $queryKategori = $conn->prepare("
 SELECT * FROM kategori
+WHERE deleted_at IS NULL
 ");
 
 $queryKategori->execute();
@@ -54,7 +55,7 @@ $buku = $qbuku->fetch(PDO::FETCH_ASSOC);
                         type="text"
                         name="code_buku"
                         id="code_buku"
-                        class="px-2 py-3 w-full outline-none"
+                        class="px-2 py-3 w-full outline-blue-500"
                         value="<?= $buku['code_buku'] ?>">
                 </div>
             </div>

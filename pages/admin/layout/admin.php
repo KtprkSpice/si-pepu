@@ -49,9 +49,9 @@ require_once __DIR__ . "/../../../config/config.php";
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="p-5 border-b border-black block text-white flex gap-2 items-center">
+                    <a href="<?= BASE_URL ?>/pages/admin/kategori/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
                         <i class="fa-solid fa-users"></i>
-                        <span>Data Pengguna</span>
+                        <span>Data Kategori</span>
                     </a>
                 </li>
             </ul>

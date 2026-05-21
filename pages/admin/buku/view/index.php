@@ -27,9 +27,9 @@ require_once __DIR__ . "/../crud/view.php";
                 ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $items['code_buku'] ?></td>
-                        <td><?= $items['nama_buku'] ?></td>
-                        <td><?= $items['nama_kategori'] ?></td>
+                        <td><?= strtoupper($items['code_buku']) ?></td>
+                        <td><?= ucwords($items['nama_buku']) ?></td>
+                        <td><?= ucwords($items['nama_kategori']) ?></td>
                         <td><?= date('d M Y', strtotime($items['tgl_masuk'])) ?></td>
                         <td>
                             <div class="flex items-center gap-2 justify-center">

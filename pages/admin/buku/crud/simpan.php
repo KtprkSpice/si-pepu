@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $queryKategori = $conn->prepare("
     SELECT * FROM kategori
     WHERE id = :id
+    AND deleted_at IS NULL
     ");
 
         // ambil data kategori berdasarkan id yang di form
@@ -40,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     SELECT code_buku
     FROM Buku
     WHERE code_buku LIKE :kd_kategori
+    AND deleted_at IS NULL
     ORDER BY code_buku DESC
     LIMIT 1 
     ");

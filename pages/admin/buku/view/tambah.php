@@ -3,6 +3,7 @@ require_once __DIR__ . "/../../layout/admin.php";
 
 $queryKategori = $conn->prepare("
 SELECT * FROM kategori
+WHERE deleted_at IS NULL
 ");
 
 $queryKategori->execute();
@@ -34,6 +35,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                 <label for="nama_buku">Nama Buku</label>
                 <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
                     <input
+                        required
                         type="text"
                         name="nama_buku"
                         id="nama_buku"
@@ -45,6 +47,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                 <label for="nama_penerbit">Nama Penerbit</label>
                 <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
                     <input
+                        required
                         type="text"
                         name="nama_penerbit"
                         id="nama_penerbit"
@@ -56,6 +59,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                 <label for="nama_penulis">Nama Penulis</label>
                 <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
                     <input
+                        required
                         type="text"
                         name="nama_penulis"
                         id="nama_penulis"
@@ -67,6 +71,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                 <label for="isbn">ISBN</label>
                 <div class="border border-black flex items-stretch rounded-lg overflow-hidden">
                     <input
+                        required
                         type="text"
                         name="isbn"
                         id="isbn"
