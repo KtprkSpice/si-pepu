@@ -21,8 +21,9 @@ require_once __DIR__ . "/../crud/view.php";
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($buku as $items):
-                    $no = 1;
+                <?php
+                $no = 1;
+                foreach ($buku as $items):
                 ?>
                     <tr>
                         <td><?= $no++ ?></td>
@@ -31,9 +32,14 @@ require_once __DIR__ . "/../crud/view.php";
                         <td><?= $items['nama_kategori'] ?></td>
                         <td><?= date('d M Y', strtotime($items['tgl_masuk'])) ?></td>
                         <td>
-                            <a href="<?= BASE_URL ?>/pages/admin/buku/view/edit.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-yellow-500 text-white rounded-lg">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
+                            <div class="flex items-center gap-2 justify-center">
+                                <a href="<?= BASE_URL ?>/pages/admin/buku/view/edit.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-yellow-500 text-white rounded-lg">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="<?= BASE_URL ?>/pages/admin/buku/crud/delete.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-red-500 text-white rounded-lg">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
