@@ -31,7 +31,7 @@ require_once __DIR__ . "/../../../config/config.php";
             </div>
             <div class="relative z-10 inset-0 flex flex-col items-center">
                 <img src="https://i.pravatar.cc/150?img=3" alt="" class="rounded-full mb-5">
-                <h2 class="text-white">Nama User</h2>
+                <h2 class="text-white"><?= $_SESSION['username'] ?></h2>
             </div>
         </div>
         <div>
@@ -57,7 +57,7 @@ require_once __DIR__ . "/../../../config/config.php";
             </ul>
         </div>
         <div class="mt-auto">
-            <a href="#" class="block p-5 text-white border-t border-black">
+            <a href="<?= BASE_URL ?>/auth/login/logout.php" class="block p-5 text-white border-t border-black">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Logout</span>
             </a>
