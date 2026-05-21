@@ -9,6 +9,19 @@ $queryKategori->execute();
 
 // FetchAll karena semua data buka satuan
 $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
+
+$id = $_GET["id"];
+
+$qbuku = $conn->prepare("
+SELECT * FROM buku
+WHERE id = :id
+");
+
+$qbuku->execute([
+    'id' => $id
+]);
+
+$buku = $qbuku->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
@@ -23,6 +36,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                     <?php foreach ($kategori as $item): ?>
                         <option
                             value="<?= $item['id'] ?>"
+                            <?= $buku['id_kategori'] == $item['id'] ? 'selected' : '' ?>
                             data-kode=<?= strtoupper($item['kd_kategori']) ?>>
                             <?= $item['nama'] ?>
                         </option>
@@ -37,7 +51,8 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                         type="text"
                         name="nama_buku"
                         id="nama_buku"
-                        class="px-2 py-3 w-full outline-none">
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['nama_buku'] ?>">
                 </div>
             </div>
             <!-- Nama Penerbit -->
@@ -48,7 +63,8 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                         type="text"
                         name="nama_penerbit"
                         id="nama_penerbit"
-                        class="px-2 py-3 w-full outline-none">
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['nama_penerbit'] ?>">
                 </div>
             </div>
             <!-- Nama Penulis -->
@@ -59,7 +75,8 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                         type="text"
                         name="nama_penulis"
                         id="nama_penulis"
-                        class="px-2 py-3 w-full outline-none">
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['nama_penulis'] ?>">
                 </div>
             </div>
             <!-- ISBN -->
@@ -70,7 +87,8 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                         type="text"
                         name="isbn"
                         id="isbn"
-                        class="px-2 py-3 w-full outline-none">
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['isbn'] ?>">
                 </div>
             </div>
             <!-- Taggal Rilis Buku -->
@@ -81,7 +99,8 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
                         type="date"
                         name="tgl_rilis_buku"
                         id="tgl_rilis_buku"
-                        class="px-2 py-3 w-full outline-none">
+                        class="px-2 py-3 w-full outline-none"
+                        value="<?= $buku['tgl_rilis_buku'] ?>">
                 </div>
             </div>
             <div class="my-10">

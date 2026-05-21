@@ -18,6 +18,8 @@ require_once __DIR__ . "/../../../config/config.php";
     <!-- DataTables -->
     <link rel="stylesheet" href="//cdn.datatables.net/2.3.8/css/dataTables.dataTables.min.css">
     <script src="//cdn.datatables.net/2.3.8/js/dataTables.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Dashboard Admin</title>
 </head>
 
@@ -62,5 +64,7 @@ require_once __DIR__ . "/../../../config/config.php";
         </div>
     </aside>
 </body>
+<!-- Alert -->
+<?php include(__DIR__ . "/../../../components/alert.php")  ?>
 
 </html>
