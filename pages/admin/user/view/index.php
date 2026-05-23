@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../../layout/admin.php";
-require_once __DIR__ . '/../crud/show.php';
+require_once __DIR__ . '/../action/show.php';
 ?>
 
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
