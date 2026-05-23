@@ -6,7 +6,7 @@ require_once __DIR__ . "/../../layout/admin.php";
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Tambah Kategori</h2>
-        <form action="<?= BASE_URL ?>/pages/admin/kategori/crud/simpan.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/kategori/action/simpan.php" method="post">
             <!-- Nama Kategori -->
             <div class="flex flex-col gap-2 max-w-lg p-5">
                 <label for="nama">Nama Kategori</label>
