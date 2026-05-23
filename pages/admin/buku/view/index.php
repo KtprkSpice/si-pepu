@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../../layout/admin.php";
-require_once __DIR__ . "/../crud/view.php";
+require_once __DIR__ . "/../action/show.php";
 ?>
 
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
@@ -36,7 +36,7 @@ require_once __DIR__ . "/../crud/view.php";
                                 <a href="<?= BASE_URL ?>/pages/admin/buku/view/edit.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-yellow-500 text-white rounded-lg">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
-                                <a href="<?= BASE_URL ?>/pages/admin/buku/crud/delete.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-red-500 text-white rounded-lg">
+                                <a href="<?= BASE_URL ?>/pages/admin/buku/action/delete.php?id=<?= $items['id'] ?>" class="p-1 w-8 bg-red-500 text-white rounded-lg">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>
                             </div>

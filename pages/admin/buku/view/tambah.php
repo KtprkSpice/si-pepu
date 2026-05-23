@@ -15,7 +15,7 @@ $kategori = $queryKategori->fetchAll(PDO::FETCH_ASSOC);
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Tambah Buku</h2>
-        <form action="<?= BASE_URL ?>/pages/admin/buku/crud/simpan.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/buku/action/simpan.php" method="post">
             <!-- Kategori buku -->
             <div class="flex flex-col gap-2 max-w-lg p-5">
                 <label for="id_kategori">Kategori buku</label>

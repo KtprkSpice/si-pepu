@@ -28,7 +28,7 @@ $buku = $qbuku->fetch(PDO::FETCH_ASSOC);
 <section class="ml-64 flex justify-center min-h-screen bg-gray-100 border border-black">
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Tambah Buku</h2>
-        <form action="<?= BASE_URL ?>/pages/admin/buku/crud/update.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/buku/action/update.php" method="post">
             <!-- ID -->
             <input type="hidden" name="id" value="<?= $buku['id'] ?>">
             <!-- Kategori buku -->
