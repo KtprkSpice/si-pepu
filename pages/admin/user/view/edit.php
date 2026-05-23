@@ -19,7 +19,7 @@ $user = $q->fetch(PDO::FETCH_ASSOC);
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Edit Data Pengguna <?= $user['username'] ?></h2>
         <!-- Form -->
-        <form action="<?= BASE_URL ?>/pages/admin/user/crud/update.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/user/action/update.php" method="post">
             <!-- Hidden Id-->
             <input type="hidden" name="id" value="<?= $user['id'] ?>">
             <!-- username -->

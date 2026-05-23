@@ -7,7 +7,7 @@ require_once __DIR__ . "/../../layout/admin.php";
     <div class="border border-black w-full max-w-6xl p-10">
         <h2 class="text-2xl font-bold mb-10">Tambah Pengguna</h2>
         <!-- Form -->
-        <form action="<?= BASE_URL ?>/pages/admin/user/crud/simpan.php" method="post">
+        <form action="<?= BASE_URL ?>/pages/admin/user/action/simpan.php" method="post">
             <!-- username -->
             <div class="flex flex-col gap-2 max-w-lg p-5">
                 <label for="username">Username</label>
