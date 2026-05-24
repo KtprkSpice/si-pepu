@@ -33,7 +33,7 @@ authMiddleware::check(['member']);
                 style="background-image: url(https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
             </div>
             <div class="relative z-10 inset-0 flex flex-col items-center">
-                <img src="https://i.pravatar.cc/150?img=3<?= $_SESSION['user_id'] ?>" alt="" class="rounded-full mb-5">
+                <img src="https://i.pravatar.cc/150?img=<?= $_SESSION['user_id'] ?>" alt="" class="rounded-full mb-5">
                 <h2 class="text-white"><?= ucwords($_SESSION['username']) ?></h2>
             </div>
         </div>

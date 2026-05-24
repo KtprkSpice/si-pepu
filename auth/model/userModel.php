@@ -26,4 +26,55 @@ class userModel
 
         return $q->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function emailCheck($email)
+    {
+        $q = $this->conn->prepare('
+        SELECT * FROM users
+        WHERE email = :emai;
+        ');
+
+        $q->execute([
+            'email' => $email
+        ]);
+
+        return $q->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function register($data)
+    {
+        $q = $this->conn->prepare('
+        INSERT INTO users (
+        username,
+        email,
+        password,
+        role
+        ) VALUES (
+        :username,
+        :email,
+        :password,
+        :role 
+        )
+        ');
+
+        $q->execute([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'role' => $data['role']
+        ]);
+    }
+
+    public function findById($id)
+    {
+        $q = $this->conn->prepare('
+        SELECT * FROM users WHERE id = :id
+        ');
+
+        $q->execute([
+            'id' => $id
+        ]);
+
+        return $q->fetch(PDO::FETCH_ASSOC);
+    }
 }
