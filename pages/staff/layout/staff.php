@@ -47,19 +47,7 @@ authMiddleware::check(['staff']);
                 <li>
                     <a href="<?= BASE_URL ?>/pages/staff/peminjaman/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
                         <i class="fa-solid fa-book"></i>
-                        <span>Data Buku</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= BASE_URL ?>/pages/admin/kategori/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <span>Data Kategori</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= BASE_URL ?>/pages/admin/user/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
-                        <i class="fa-solid fa-users"></i>
-                        <span>Data Users</span>
+                        <span>Data Peminjaman</span>
                     </a>
                 </li>
             </ul>
