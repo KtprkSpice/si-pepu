@@ -101,4 +101,58 @@ class peminjamanController
             exit();
         }
     }
+
+    public function pengembalian($id)
+    {
+        try {
+            // Ambil data peminjaman
+            $data = $this->peminjaman->getById($id);
+
+            if (!$data) {
+                $_SESSION['error'] = 'Data tidak ada';
+                header('Location:' . BASE_URL . '/pages/staff/peminjaman/view/index.php');
+                exit();
+            }
+
+            $today = new DateTime();
+            $tenggat = new DateTime($data['tenggat_waktu']);
+
+            $denda = 0;
+
+            if ($data['status'] == 'dikembalikan') {
+                $_SESSION['error'] = 'Buku sudah dikembalikan';
+                header('Location:' . BASE_URL . '/pages/staff/peminjaman/view/index.php');
+                exit();
+            }
+
+            if ($today > $tenggat) {
+                // Selisih dari hari ini dengan tenggat
+                $selisih = $today->diff($tenggat);
+
+                // Ambil hari selisihnya misalakn tenggat waktu tanggal 20 lewat 3 hari berarti diambil 3 harinya
+                $hariTelat  = $selisih->days;
+
+                $dendaHarian = 5000;
+
+                $denda = $hariTelat * $dendaHarian;
+            }
+
+            $this->peminjaman->updatePengembalian([
+                'id' => $id,
+                'status' => 'dikembalikan',
+                'total_denda' => $denda
+            ]);
+
+            // Kenapa data id_buku karena cari berdasarkan id buku relasi
+            $this->peminjaman->updateBuku($data['id_buku']);
+
+            $_SESSION['success'] = 'Berhasil melakukan pengembalian';
+            header('Location:' . BASE_URL . '/pages/staff/peminjaman/view/index.php');
+            exit();
+        } catch (PDOException $e) {
+            $_SESSION['error'] = $e->getMessage();
+            header('Location:' . BASE_URL . '/pages/staff/peminjaman/view/index.php');
+            exit();
+        }
+    }
 }

@@ -162,4 +162,20 @@ class peminjamanModel
             'id' => $id
         ]);
     }
+
+    public function updatePengembalian($data)
+    {
+        $q = $this->conn->prepare('
+        UPDATE pinjaman SET
+            status = :status,
+            total_denda = :total_denda
+        WHERE id = :id
+        ');
+
+        $q->execute([
+            'id' => $data['id'],
+            'status' => $data['status'],
+            'total_denda' => $data['total_denda']
+        ]);
+    }
 }
