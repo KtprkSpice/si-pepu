@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../../../config/config.php";
 require_once __DIR__ . "/../../../auth/middleware/authMiddleware.php";
-authMiddleware::check(['admin']);
+authMiddleware::check(['staff']);
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ authMiddleware::check(['admin']);
                     </a>
                 </li>
                 <li>
-                    <a href="<?= BASE_URL ?>/pages/admin/buku/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
+                    <a href="<?= BASE_URL ?>/pages/staff/peminjaman/view/index.php" class="p-5 border-b border-black block text-white flex gap-2 items-center">
                         <i class="fa-solid fa-book"></i>
                         <span>Data Buku</span>
                     </a>

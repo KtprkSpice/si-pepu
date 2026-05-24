@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/../../../config/config.php";
-include(__DIR__ . "/../../../Middleware/admin.php");
+require_once __DIR__ . "/../../../auth/middleware/authMiddleware.php";
+authMiddleware::check(['member']);
+
 ?>
 
 <!DOCTYPE html>
